@@ -35,9 +35,12 @@ Stereo panning from the NBS file is applied automatically. Use `setFakeStereo(tr
 ## Dependency
 
 ```kotlin
+repositories {
+    maven("https://maven.hapily.me/releases")
+}
+
 dependencies {
     implementation("com.xxmicloxx:NoteBlockAPI:1.7.0-SNAPSHOT")
-    compileOnly("net.minestom:minestom:2026.08.16-26.2")
 }
 ```
 
