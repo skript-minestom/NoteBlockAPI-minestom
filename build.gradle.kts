@@ -42,7 +42,7 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
-            artifactId = project.name + "-sm"
+            artifactId = project.name
             version = ver
         }
     }
