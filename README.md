@@ -32,16 +32,7 @@ Events: `NoteBlockAPI.getEventNode()`.
 
 Stereo panning from the NBS file is applied automatically. Use `setFakeStereo(true)` for dual-source mono songs. Use `setEnable10Octave(true)` with a client instruments resource pack for notes outside the vanilla 2-octave range.
 
-## Dependency
-
-```kotlin
-repositories {
-    maven("https://maven.hapily.me/releases")
-}
-
-dependencies {
-    implementation("com.xxmicloxx:NoteBlockAPI:1.7.0-SNAPSHOT")
-}
-```
+## Adding to Your Project
+The latest NoteBlockAPI-minestom release is available as a dependency [here](https://maven.hapily.me/#/releases/com/xxmicloxx/NoteBlockAPI)
 
 Requires Java 25+.
