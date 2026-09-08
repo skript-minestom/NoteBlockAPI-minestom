@@ -32,6 +32,14 @@ Events: `NoteBlockAPI.getEventNode()`.
 
 Stereo panning from the NBS file is applied automatically. Use `setFakeStereo(true)` for dual-source mono songs. Use `setEnable10Octave(true)` with a client instruments resource pack for notes outside the vanilla 2-octave range.
 
+## Custom instruments
+
+OpenNBS stores custom instruments as **sound file paths** (relative to its `Sounds/` folder), not Minecraft sound event IDs. For example, an imported vanilla sound may be saved as `minecraft/fireworks/blast_far1` rather than `entity.firework_rocket.blast_far`.
+
+This API resolves known vanilla paths to sound events using a reverse index of Minecraft `sounds.json`, generated at build time into the published jar. True custom `.ogg` files still need a client resource pack whose sound events match the key used in the song.
+
+To retarget the index, edit `minecraftVersion` in `build.gradle.kts` and rebuild (or run `./gradlew updateSoundIndex`). The first build for a given version needs network access to download sounds data from [misode/mcmeta](https://github.com/misode/mcmeta).
+
 ## Dependency
 
 ```kotlin

@@ -1,5 +1,7 @@
 package com.xxmicloxx.NoteBlockAPI.model;
 
+import com.xxmicloxx.NoteBlockAPI.utils.SoundKeyResolver;
+
 /**
  * Custom instrument defined in an NBS file.
  */
@@ -12,7 +14,7 @@ public class CustomInstrument {
 	public CustomInstrument(byte index, String name, String soundFileName) {
 		this.index = index;
 		this.name = name;
-		this.soundFileName = soundFileName.replace(".ogg", "");
+		this.soundFileName = SoundKeyResolver.resolve(soundFileName, name);
 	}
 
 	public byte getIndex() {
@@ -24,7 +26,7 @@ public class CustomInstrument {
 	}
 
 	/**
-	 * Sound file / event name without {@code .ogg}.
+	 * Playable sound event / key (OpenNBS file paths are resolved to vanilla events when known).
 	 */
 	public String getSoundFileName() {
 		return soundFileName;
